@@ -2,12 +2,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Users, TrendingUp, Bell, Activity } from "lucide-react";
+import { Users, TrendingUp, Activity } from "lucide-react";
 
 const stats = [
   { icon: Users, label: "Clients inscrits", value: "247", change: "+12 ce mois", color: "text-blue-400" },
   { icon: TrendingUp, label: "Actifs ce mois", value: "89", change: "+8% vs mois dernier", color: "text-green-400" },
-  { icon: Bell, label: "Notifs envoyées", value: "1 204", change: "Taux ouverture 68%", color: "text-purple-400" },
   { icon: Activity, label: "Visites totales", value: "3 847", change: "+23% ce mois", color: "text-orange-400" },
 ];
 
