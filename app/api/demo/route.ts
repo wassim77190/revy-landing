@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
-    const { prenom, nom, commerce, email, telephone, type, creneau, message } = data;
+    const { prenom, nom, commerce, email, telephone, type, date, creneau, message } = data;
 
     if (!prenom || !nom || !commerce || !email || !telephone) {
       return NextResponse.json({ error: "Champs manquants" }, { status: 400 });
@@ -46,8 +46,8 @@ export async function POST(req: NextRequest) {
             <td style="padding: 12px 0;"><a href="tel:${telephone}" style="color: #7C3AED;">${telephone}</a></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-            <td style="padding: 12px 0; color: rgba(255,255,255,0.5); font-size: 13px;">Disponibilité</td>
-            <td style="padding: 12px 0; color: #ffffff;">${creneau || "Non précisé"}</td>
+            <td style="padding: 12px 0; color: rgba(255,255,255,0.5); font-size: 13px;">Rendez-vous</td>
+            <td style="padding: 12px 0; color: #ffffff;">${date ? `${date} à ${creneau}` : creneau || "Non précisé"}</td>
           </tr>
           ${message ? `
           <tr>
