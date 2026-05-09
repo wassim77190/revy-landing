@@ -83,13 +83,24 @@ export default function Hero({ onDemo }: { onDemo: () => void }) {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
-              {/* Phone frame */}
-              <div className="relative w-64 h-[520px] bg-gradient-to-b from-gray-900 to-black rounded-[44px] border border-white/10 shadow-2xl overflow-hidden p-3">
-                {/* Notch */}
-                <div className="w-24 h-6 bg-black rounded-full mx-auto mb-3" />
+              {/* iPhone frame */}
+              <div className="relative w-[270px] h-[560px]">
+                {/* Outer shell */}
+                <div className="absolute inset-0 rounded-[52px] bg-gradient-to-br from-[#3a3a3c] via-[#1c1c1e] to-[#3a3a3c] shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_30px_80px_rgba(0,0,0,0.8)]" />
+                {/* Side buttons left (volume) */}
+                <div className="absolute -left-[3px] top-[110px] w-[3px] h-8 rounded-l-sm bg-[#3a3a3c]" />
+                <div className="absolute -left-[3px] top-[155px] w-[3px] h-8 rounded-l-sm bg-[#3a3a3c]" />
+                {/* Side button right (power) */}
+                <div className="absolute -right-[3px] top-[130px] w-[3px] h-12 rounded-r-sm bg-[#3a3a3c]" />
+                {/* Screen area */}
+                <div className="absolute inset-[3px] rounded-[50px] bg-[#0a0a0f] overflow-hidden">
+                  {/* Dynamic Island */}
+                  <div className="flex justify-center pt-3 pb-2">
+                    <div className="w-24 h-7 bg-black rounded-full" />
+                  </div>
 
                 {/* Screen content */}
-                <div className="bg-surface-2 rounded-[32px] h-full overflow-hidden">
+                <div className="bg-surface-2 h-full overflow-hidden mx-2 rounded-b-[44px]">
                   {/* Wallet card */}
                   <div className="m-3 rounded-2xl bg-gradient-to-br from-brand-700 to-accent p-4 shadow-lg glow-purple">
                     <div className="flex justify-between items-start mb-6">
@@ -179,6 +190,7 @@ export default function Hero({ onDemo }: { onDemo: () => void }) {
                   <div className="text-xs text-white/50">Synchronisé ✓</div>
                 </div>
               </motion.div>
+            </div>
             </motion.div>
           </motion.div>
         </div>

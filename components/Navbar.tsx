@@ -35,9 +35,7 @@ export default function Navbar({ onDemo }: { onDemo: () => void }) {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-brand-600 flex items-center justify-center">
-            <span className="text-white font-bold text-sm">R</span>
-          </div>
+          <img src="/logo.png" alt="Revy" className="h-9 w-9 rounded-xl" />
           <span className="text-white font-bold text-xl tracking-tight">Revy</span>
         </a>
 
