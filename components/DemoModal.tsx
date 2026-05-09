@@ -99,15 +99,15 @@ export default function DemoModal({ open, onClose }: Props) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/70 backdrop-blur-md z-50"
-          />
-
+            className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4"
+          >
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-2xl bg-surface-2 border border-white/10 rounded-3xl z-50 overflow-y-auto max-h-[90vh] shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+            className="w-full max-w-2xl bg-surface-2 border border-white/10 rounded-3xl overflow-y-auto max-h-[90vh] shadow-2xl"
           >
             {/* Header */}
             <div className="sticky top-0 bg-surface-2/95 backdrop-blur px-8 py-6 border-b border-white/5 flex justify-between items-center z-10">
@@ -332,6 +332,7 @@ export default function DemoModal({ open, onClose }: Props) {
                 </form>
               )}
             </div>
+          </motion.div>
           </motion.div>
         </>
       )}
