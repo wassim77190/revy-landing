@@ -85,17 +85,17 @@ export default function ROICalculator() {
     const gainAnnuel = gainMensuel * 12;
     const coutRevy = 79;
     const beneficeNet = gainMensuel - coutRevy;
-    const roi = Math.round((gainMensuel / coutRevy) * 100);
+    const ratio = Math.round(gainMensuel / coutRevy);
 
     const fmt = (n: number) =>
       n >= 1000
         ? `${(n / 1000).toFixed(1).replace(".", ",")}k€`
         : `${n}€`;
 
-    return { membres, clientsRecuperes, gainsMembres, gainsRelance, gainMensuel, gainAnnuel, beneficeNet, roi, revenuActuel, fmt };
+    return { membres, clientsRecuperes, gainsMembres, gainsRelance, gainMensuel, gainAnnuel, beneficeNet, ratio, revenuActuel, fmt };
   }, [clients, panier, visites]);
 
-  const { membres, clientsRecuperes, gainsMembres, gainsRelance, gainMensuel, gainAnnuel, beneficeNet, roi, fmt } = results;
+  const { membres, clientsRecuperes, gainsMembres, gainsRelance, gainMensuel, gainAnnuel, beneficeNet, ratio, fmt } = results;
 
   return (
     <section ref={ref} className="py-28 relative overflow-hidden">
@@ -165,7 +165,7 @@ export default function ROICalculator() {
                   value={`${membres}`}
                   sub="clients avec votre carte"
                   color="text-accent"
-                  source="35% adoption rate"
+                  source="20% adoption estimée"
                 />
               </div>
               <div className="glass rounded-2xl p-5 border border-blue-500/20 bg-blue-500/5">
@@ -223,8 +223,8 @@ export default function ROICalculator() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-white/50 text-xs">ROI estimé</div>
-                  <div className="text-2xl font-black text-accent mt-1">{roi}%</div>
+                  <div className="text-white/50 text-xs">Pour 1€ investi</div>
+                  <div className="text-2xl font-black text-accent mt-1">{ratio}€ générés</div>
                 </div>
               </div>
             </div>
