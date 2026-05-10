@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Probleme from "@/components/Probleme";
@@ -13,16 +12,19 @@ import PourquoiCaMarche from "@/components/PourquoiCaMarche";
 import FAQ from "@/components/FAQ";
 import CTAFinale from "@/components/CTAFinale";
 import Footer from "@/components/Footer";
-import DemoModal from "@/components/DemoModal";
+
+const CALENDLY_URL = "https://calendly.com/contact-revycards/30min";
+
+function openCalendly() {
+  (window as any).Calendly?.initPopupWidget({ url: CALENDLY_URL });
+}
 
 export default function Home() {
-  const [modal, setModal] = useState(false);
-
   return (
     <>
-      <Navbar onDemo={() => setModal(true)} />
+      <Navbar onDemo={openCalendly} />
       <main>
-        <Hero onDemo={() => setModal(true)} />
+        <Hero onDemo={openCalendly} />
         <Probleme />
         <Solution />
         <Avantages />
@@ -32,10 +34,9 @@ export default function Home() {
         <PourQui />
         <PourquoiCaMarche />
         <FAQ />
-        <CTAFinale onDemo={() => setModal(true)} />
+        <CTAFinale onDemo={openCalendly} />
       </main>
-      <Footer onDemo={() => setModal(true)} />
-      <DemoModal open={modal} onClose={() => setModal(false)} />
+      <Footer onDemo={openCalendly} />
     </>
   );
 }
