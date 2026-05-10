@@ -68,19 +68,17 @@ export default function ROICalculator() {
   const results = useMemo(() => {
     const revenuActuel = clients * panier * visites;
 
-    // 35% adoptent la carte (conservateur)
-    const membres = Math.round(clients * 0.35);
+    // 20% adoptent la carte (hypothèse prudente)
+    const membres = Math.round(clients * 0.20);
 
-    // Nielsen: 2x plus de visites → 1.6x (conservateur)
-    // Invesp: +67% dépenses → +25% (conservateur)
+    // Fréquence +15% et panier +8% pour les membres (très conservateur)
     const gainsMembres = Math.round(
-      membres * (panier * 1.25) * (visites * 1.6) - membres * panier * visites
+      membres * (panier * 1.08) * (visites * 1.15) - membres * panier * visites
     );
 
-    // Adobe: 61% partis l'ont oublié → push les récupère
-    // Winback: 26% de réponse aux relances personnalisées
-    const clientsARelancer = Math.round(clients * 0.20);
-    const clientsRecuperes = Math.round(clientsARelancer * 0.26);
+    // 10% de clients inactifs relancés via push, 15% répondent
+    const clientsARelancer = Math.round(clients * 0.10);
+    const clientsRecuperes = Math.round(clientsARelancer * 0.15);
     const gainsRelance = clientsRecuperes * panier;
 
     const gainMensuel = gainsMembres + gainsRelance;
@@ -151,9 +149,9 @@ export default function ROICalculator() {
             />
 
             <div className="pt-4 border-t border-white/5 space-y-2 text-xs text-white/30">
-              <p>* Basé sur 35% de taux d'adoption de la carte</p>
-              <p>* Fréquence ×1,6 et panier +25% pour les membres (Nielsen, Invesp — hypothèses conservatrices)</p>
-              <p>* 26% des clients inactifs récupérés via push (Winback Research)</p>
+              <p>* Basé sur 20% de taux d'adoption de la carte</p>
+              <p>* Fréquence +15% et panier +8% pour les membres (hypothèses prudentes)</p>
+              <p>* 15% des clients inactifs récupérés via push (hypothèse prudente)</p>
             </div>
           </div>
 
