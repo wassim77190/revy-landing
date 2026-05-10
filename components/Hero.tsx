@@ -37,6 +37,12 @@ export default function Hero({ onDemo }: { onDemo: () => void }) {
               Puissant pour votre business.
             </motion.p>
 
+            <motion.div {...fadeUp(0.35)} className="inline-flex items-center gap-3 glass rounded-2xl px-5 py-3 mb-10 border border-red-500/20 bg-red-500/5">
+              <span className="text-2xl font-black text-red-400">61%</span>
+              <span className="text-white/60 text-sm leading-snug">de vos clients perdus ont juste <span className="text-white font-semibold">oublié votre commerce</span>.<br className="hidden sm:block" /> Une notification suffit à les faire revenir.</span>
+              <span className="text-white/20 text-xs ml-auto hidden sm:block">— Adobe</span>
+            </motion.div>
+
             <motion.div {...fadeUp(0.4)} className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={onDemo}

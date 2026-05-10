@@ -10,7 +10,6 @@ import Dashboard from "@/components/Dashboard";
 import PourQui from "@/components/PourQui";
 import PourquoiCaMarche from "@/components/PourquoiCaMarche";
 import FAQ from "@/components/FAQ";
-import Stats from "@/components/Stats";
 import ROICalculator from "@/components/ROICalculator";
 import CTAFinale from "@/components/CTAFinale";
 import Footer from "@/components/Footer";
@@ -35,7 +34,6 @@ export default function Home() {
         <Dashboard />
         <PourQui />
         <PourquoiCaMarche />
-        <Stats />
         <ROICalculator />
         <FAQ />
         <CTAFinale onDemo={openCalendly} />

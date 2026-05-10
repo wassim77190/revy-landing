@@ -49,6 +49,19 @@ export default function Notifications() {
               <span className="text-white font-semibold">Gratuit et illimité.</span>
             </p>
 
+            <div className="flex items-center gap-4 mb-6 glass rounded-xl px-5 py-3 border border-white/5">
+              <div className="text-center">
+                <div className="text-2xl font-black text-accent">90%</div>
+                <div className="text-white/40 text-xs">taux d'ouverture push</div>
+              </div>
+              <div className="text-white/20 text-lg font-thin">vs</div>
+              <div className="text-center">
+                <div className="text-2xl font-black text-white/30">20%</div>
+                <div className="text-white/40 text-xs">pour l'email</div>
+              </div>
+              <div className="ml-auto text-white/20 text-xs italic hidden sm:block">— Localytics</div>
+            </div>
+
             <div className="space-y-3">
               {notifs.map((n, i) => (
                 <motion.button

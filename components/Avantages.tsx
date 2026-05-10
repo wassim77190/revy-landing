@@ -3,13 +3,17 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-const avantages = [
+type Avantage = { icon: string; title: string; desc: string; color: string; border: string; stat?: string; statLabel?: string; statSource?: string; };
+const avantages: Avantage[] = [
   {
     icon: "💳",
     title: "Carte dans le Wallet natif",
     desc: "Apple Wallet et Google Wallet. Toujours accessible sur l'écran de verrouillage. Le client ne peut pas l'oublier.",
     color: "from-blue-500/20 to-blue-600/10",
     border: "border-blue-500/20",
+    stat: "+67%",
+    statLabel: "de dépenses des clients fidèles",
+    statSource: "Invesp",
   },
   {
     icon: "🚫",
@@ -17,6 +21,9 @@ const avantages = [
     desc: "Pas d'app, pas de compte, pas de friction. 2 clics et c'est dans le téléphone. Le taux d'adoption explose.",
     color: "from-green-500/20 to-green-600/10",
     border: "border-green-500/20",
+    stat: "62%",
+    statLabel: "préfèrent une carte digitale",
+    statSource: "Statista 2024",
   },
   {
     icon: "🔔",
@@ -24,6 +31,9 @@ const avantages = [
     desc: "Envoyez des messages directement sur l'écran de verrouillage de vos clients. Là où les SMS coûtent 0,035€ chacun, Revy envoie à 0€.",
     color: "from-purple-500/20 to-purple-600/10",
     border: "border-purple-500/20",
+    stat: "90%",
+    statLabel: "de taux d'ouverture",
+    statSource: "Localytics",
   },
   {
     icon: "📊",
@@ -45,6 +55,9 @@ const avantages = [
     desc: "Relance automatique des clients inactifs, alerte anniversaire, notification de proximité. La bonne offre, au bon client, au bon moment.",
     color: "from-pink-500/20 to-pink-600/10",
     border: "border-pink-500/20",
+    stat: "2×",
+    statLabel: "plus de visites",
+    statSource: "Nielsen",
   },
   {
     icon: "🏆",
@@ -95,11 +108,18 @@ export default function Avantages() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.07 }}
-              className={`glass glass-hover rounded-2xl p-6 border ${a.border} bg-gradient-to-br ${a.color} cursor-default`}
+              className={`glass glass-hover rounded-2xl p-6 border ${a.border} bg-gradient-to-br ${a.color} cursor-default flex flex-col`}
             >
               <div className="text-3xl mb-4">{a.icon}</div>
               <h3 className="text-white font-semibold mb-2 text-sm leading-snug">{a.title}</h3>
-              <p className="text-white/45 text-xs leading-relaxed">{a.desc}</p>
+              <p className="text-white/45 text-xs leading-relaxed flex-1">{a.desc}</p>
+              {a.stat && (
+                <div className="mt-4 pt-4 border-t border-white/5">
+                  <span className="text-white font-black text-lg">{a.stat}</span>
+                  <span className="text-white/40 text-xs ml-2">{a.statLabel}</span>
+                  <div className="text-white/20 text-xs italic mt-0.5">— {a.statSource}</div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
