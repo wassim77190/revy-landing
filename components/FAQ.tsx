@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "Et si ça ne marche pas pour moi ?",
-    a: "Si vous utilisez Revy correctement pendant 3 mois — au moins 3 fois par semaine — et que vous avez moins de 20 clients inscrits, on vous rembourse tout. Pas de discussion, pas de procédure compliquée. Les conditions exactes sont détaillées dans votre contrat.",
+    a: "On vous rembourse intégralement. Pas de discussion, pas de procédure compliquée. Les conditions exactes sont détaillées dans votre contrat.",
   },
   {
     q: "La démo m'engage-t-elle à quelque chose ?",

@@ -37,54 +37,49 @@ export default function Garantie() {
           <div className="h-1 w-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500" />
 
           <div className="p-10 md:p-14">
-            {/* Header */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 mb-8">
-              <div className="w-16 h-16 rounded-2xl bg-green-500/15 border border-green-500/30 flex items-center justify-center flex-shrink-0">
-                <ShieldCheck size={32} className="text-green-400" />
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/25 rounded-full px-4 py-1.5 mb-3">
-                  <span className="text-green-400 text-xs font-semibold uppercase tracking-wide">Garantie satisfait ou remboursé</span>
+            <div className="flex flex-col md:flex-row gap-10 items-center">
+              {/* Big 3 months */}
+              <div className="flex-shrink-0 text-center">
+                <div className="w-36 h-36 rounded-3xl bg-green-500/15 border-2 border-green-500/40 flex flex-col items-center justify-center">
+                  <span className="text-6xl font-black text-green-400 leading-none">3</span>
+                  <span className="text-green-400/80 text-sm font-bold uppercase tracking-widest">mois</span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                  3 mois pour vous faire votre avis.{" "}
-                  <span className="text-green-400">Zéro risque.</span>
+                <div className="mt-3">
+                  <ShieldCheck size={20} className="text-green-400 mx-auto mb-1" />
+                  <span className="text-green-400 text-xs font-semibold uppercase tracking-wide">Satisfait ou remboursé</span>
+                </div>
+              </div>
+
+              {/* Right content */}
+              <div className="flex-1">
+                <div className="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/25 rounded-full px-4 py-1.5 mb-4">
+                  <span className="text-green-400 text-xs font-semibold uppercase tracking-wide">Garantie sans risque</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+                  Essayez Revy{" "}
+                  <span className="text-green-400">3 mois sans risque.</span>
+                  <br />Si vous n'êtes pas convaincu, on vous rembourse.
                 </h2>
+                <p className="text-white/55 text-base leading-relaxed mb-6">
+                  Pas de discussion. Pas de procédure compliquée. Les conditions sont détaillées dans votre contrat.
+                </p>
+
+                <div className="space-y-3">
+                  {points.map((p, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -12 }}
+                      animate={inView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ delay: 0.2 + i * 0.1 }}
+                      className="flex items-center gap-3"
+                    >
+                      <span className="text-base flex-shrink-0">{p.icon}</span>
+                      <span className="text-white/70 text-sm">{p.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
-
-            {/* Main statement */}
-            <div className="glass rounded-2xl border border-white/8 p-6 mb-8">
-              <p className="text-white/80 text-lg leading-relaxed">
-                Si après 3 mois vous avez utilisé Revy{" "}
-                <span className="text-white font-semibold">au moins 3 fois par semaine</span>{" "}
-                et que vous avez{" "}
-                <span className="text-white font-semibold">moins de 20 clients inscrits</span>,
-                je vous rembourse intégralement.{" "}
-                <span className="text-green-400 font-semibold">Pas de discussion. Pas de procédure compliquée.</span>
-              </p>
-            </div>
-
-            {/* 3 points */}
-            <div className="grid sm:grid-cols-3 gap-4 mb-8">
-              {points.map((p, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="flex items-start gap-3 glass rounded-xl p-4 border border-white/5"
-                >
-                  <span className="text-lg flex-shrink-0">{p.icon}</span>
-                  <span className="text-white/70 text-sm leading-snug">{p.text}</span>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Bottom note */}
-            <p className="text-white/30 text-xs text-center">
-              Les conditions exactes sont détaillées dans votre contrat. Garantie valable sur la première période d'abonnement.
-            </p>
           </div>
         </motion.div>
       </div>
