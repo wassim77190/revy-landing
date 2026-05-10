@@ -2,7 +2,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Probleme from "@/components/Probleme";
-import Solution from "@/components/Solution";
 import Avantages from "@/components/Avantages";
 import Notifications from "@/components/Notifications";
 import Wallet from "@/components/Wallet";
@@ -28,7 +27,6 @@ export default function Home() {
       <main>
         <Hero onDemo={openCalendly} />
         <Probleme />
-        <Solution />
         <Avantages />
         <Notifications />
         <Wallet />
