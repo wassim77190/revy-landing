@@ -11,6 +11,7 @@ import PourQui from "@/components/PourQui";
 import PourquoiCaMarche from "@/components/PourquoiCaMarche";
 import FAQ from "@/components/FAQ";
 import ROICalculator from "@/components/ROICalculator";
+import Garantie from "@/components/Garantie";
 import CTAFinale from "@/components/CTAFinale";
 import Footer from "@/components/Footer";
 
@@ -35,6 +36,7 @@ export default function Home() {
         <PourQui />
         <PourquoiCaMarche />
         <ROICalculator />
+        <Garantie />
         <FAQ />
         <CTAFinale onDemo={openCalendly} />
       </main>
