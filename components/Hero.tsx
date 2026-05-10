@@ -83,114 +83,11 @@ export default function Hero({ onDemo }: { onDemo: () => void }) {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
-              {/* iPhone frame */}
-              <div className="relative w-[270px] h-[560px]">
-                {/* Outer shell */}
-                <div className="absolute inset-0 rounded-[52px] bg-gradient-to-br from-[#3a3a3c] via-[#1c1c1e] to-[#3a3a3c] shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_30px_80px_rgba(0,0,0,0.8)]" />
-                {/* Side buttons left (volume) */}
-                <div className="absolute -left-[3px] top-[110px] w-[3px] h-8 rounded-l-sm bg-[#3a3a3c]" />
-                <div className="absolute -left-[3px] top-[155px] w-[3px] h-8 rounded-l-sm bg-[#3a3a3c]" />
-                {/* Side button right (power) */}
-                <div className="absolute -right-[3px] top-[130px] w-[3px] h-12 rounded-r-sm bg-[#3a3a3c]" />
-                {/* Screen area */}
-                <div className="absolute inset-[3px] rounded-[50px] bg-[#0a0a0f] overflow-hidden">
-                  {/* Dynamic Island */}
-                  <div className="flex justify-center pt-3 pb-2">
-                    <div className="w-24 h-7 bg-black rounded-full" />
-                  </div>
-
-                {/* Screen content */}
-                <div className="bg-surface-2 h-full overflow-hidden mx-2 rounded-b-[44px]">
-                  {/* Wallet card */}
-                  <div className="m-3 rounded-2xl bg-gradient-to-br from-brand-700 to-accent p-4 shadow-lg glow-purple">
-                    <div className="flex justify-between items-start mb-6">
-                      <div>
-                        <div className="text-xs text-white/60 mb-1">MON COMMERCE</div>
-                        <div className="text-white font-bold text-sm">Carte fidélité</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-xs text-white/60">TAMPONS</div>
-                        <div className="text-white font-bold text-xl">5/8</div>
-                      </div>
-                    </div>
-                    {/* Tampons dots */}
-                    <div className="flex gap-2 mb-4">
-                      {[...Array(8)].map((_, i) => (
-                        <div
-                          key={i}
-                          className={`w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold ${
-                            i < 5
-                              ? "bg-white border-white text-brand-700"
-                              : "bg-transparent border-white/40 text-transparent"
-                          }`}
-                        >
-                          ✓
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex justify-between text-xs text-white/70">
-                      <span>🎁 8ème offert</span>
-                      <span>Marie D.</span>
-                    </div>
-                  </div>
-
-                  {/* Notification */}
-                  <motion.div
-                    animate={{ x: [20, 0] }}
-                    transition={{ duration: 0.5, delay: 1.5 }}
-                    className="mx-3 mt-3 notif-pill rounded-xl p-3"
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-brand-600 flex items-center justify-center text-xs">
-                        🔔
-                      </div>
-                      <div>
-                        <div className="text-xs font-semibold text-white">Mon Commerce</div>
-                        <div className="text-xs text-white/60">Vous êtes à côté ? On vous attend !</div>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Stats mini */}
-                  <div className="mx-3 mt-3 grid grid-cols-2 gap-2">
-                    <div className="glass rounded-xl p-3 text-center">
-                      <div className="text-lg font-bold text-white">247</div>
-                      <div className="text-xs text-white/50">Clients</div>
-                    </div>
-                    <div className="glass rounded-xl p-3 text-center">
-                      <div className="text-lg font-bold gradient-text">+38%</div>
-                      <div className="text-xs text-white/50">Retours</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating badge Apple */}
-              <motion.div
-                animate={{ x: [0, 6, 0], y: [0, -4, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-                className="absolute -right-12 top-16 glass rounded-2xl px-3 py-2 flex items-center gap-2 shadow-xl"
-              >
-                <span className="text-lg">🍎</span>
-                <div>
-                  <div className="text-xs font-semibold text-white">Apple Wallet</div>
-                  <div className="text-xs text-white/50">Ajouté ✓</div>
-                </div>
-              </motion.div>
-
-              {/* Floating badge Google */}
-              <motion.div
-                animate={{ x: [0, -6, 0], y: [0, 4, 0] }}
-                transition={{ duration: 4.5, repeat: Infinity, delay: 1 }}
-                className="absolute -left-14 bottom-24 glass rounded-2xl px-3 py-2 flex items-center gap-2 shadow-xl"
-              >
-                <span className="text-lg">🤖</span>
-                <div>
-                  <div className="text-xs font-semibold text-white">Google Wallet</div>
-                  <div className="text-xs text-white/50">Synchronisé ✓</div>
-                </div>
-              </motion.div>
-            </div>
+              <img
+                src="/phone.png"
+                alt="Aperçu de l'application Revy"
+                className="w-[320px] md:w-[380px] drop-shadow-2xl"
+              />
             </motion.div>
           </motion.div>
         </div>
