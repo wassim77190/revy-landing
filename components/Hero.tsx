@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -20,9 +20,15 @@ export default function Hero({ onDemo }: { onDemo: () => void }) {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>
-            <motion.div {...fadeUp(0.1)} className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8">
-              <Sparkles size={14} className="text-accent" />
-              <span className="text-sm text-white/70 font-medium">Fidélisation digitale nouvelle génération</span>
+            <motion.div {...fadeUp(0.1)} className="flex flex-wrap items-center gap-3 mb-8">
+              <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2">
+                <Sparkles size={14} className="text-accent" />
+                <span className="text-sm text-white/70 font-medium">Fidélisation digitale nouvelle génération</span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-green-500/15 border border-green-500/40">
+                <ShieldCheck size={14} className="text-green-400" />
+                <span className="text-sm text-green-400 font-semibold">Satisfait ou remboursé — 3 mois</span>
+              </div>
             </motion.div>
 
             <motion.h1 {...fadeUp(0.2)} className="text-5xl lg:text-7xl font-bold leading-[1.05] mb-6 tracking-tight">
