@@ -78,17 +78,34 @@ export default function Hero({ onDemo }: { onDemo: () => void }) {
             className="relative flex justify-center"
           >
             {/* Phone mockup */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative"
-            >
-              <img
-                src="/phone.png"
+            <div className="relative w-[320px] md:w-[380px]">
+              {/* Phone */}
+              <motion.img
+                src="/phone-solo.png"
                 alt="Aperçu de l'application Revy"
-                className="w-[320px] md:w-[380px] drop-shadow-2xl"
+                className="w-full drop-shadow-2xl"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
-            </motion.div>
+
+              {/* Apple Wallet badge */}
+              <motion.img
+                src="/popup-apple-wallet.png"
+                alt="Apple Wallet"
+                className="absolute -right-16 top-[15%] w-[180px] md:w-[200px] drop-shadow-xl"
+                animate={{ x: [0, 6, 0], y: [0, -6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              />
+
+              {/* Google Wallet badge */}
+              <motion.img
+                src="/popup-google-wallet.png"
+                alt="Google Wallet"
+                className="absolute -left-16 bottom-[15%] w-[160px] md:w-[180px] drop-shadow-xl"
+                animate={{ x: [0, -6, 0], y: [0, 6, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              />
+            </div>
           </motion.div>
         </div>
 
